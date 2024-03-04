@@ -1,4 +1,81 @@
-// Funzione per creare un oggetto che rappresenta una creatura
+class Creature {
+    constructor(name, hp, dmg, weight, sex, quantity) {
+        this.name = name;
+        this.hp = hp || 'Unknown';
+        this.dmg = dmg || 'Unknown';
+        this.weight = weight || 'Unknown';
+        this.sex = sex || 'Unknown';
+        this.quantity = quantity || 'Unknown';
+    }
+
+    static printTames(creatures) {
+        creatures.forEach(creature => {
+            const documentSection = document.getElementById(creature.name);
+            const newP = document.createElement('p');
+            newP.innerText = `${creature.name}: HP ${creature.hp}, DMG ${creature.dmg}, WEIGHT ${creature.weight}, SEX ${creature.sex}, Quantità ${creature.quantity}`;
+            documentSection.appendChild(newP);
+        });
+    }
+}
+
+// Creazione della lista di creature
+const creatures = [
+    new Creature("rex", 11600, 417, null, null, 3),
+new Creature("charca", 31200, 327, null, null, 2),
+new Creature("charca", 30600, 315, null, null, 1),
+new Creature("charca", 30700, 316, null, null, 1),
+new Creature("charca", 31300, 328, null, null, 1),
+new Creature("giga", 34000, 280, null, null, 1),
+new Creature("quetzal", 13275, null, 1500, null, 4),
+new Creature("quetzal", 13000, null, 1500, null, 2),
+new Creature("quetzal", 13180, null, 1520, null, 1),
+new Creature("quetzal", 13350, null, 1540, null, 1),
+new Creature("tuso", 39000, 390, null, null, 1),
+new Creature("tuso", 38200, 495, null, null, 1),
+new Creature("arthropleura", 6700, 460, null, null, 1),
+new Creature("baryonix", 6800, 537, null, null, 2),
+new Creature("theri", 16200, 657, null, "M", 2),
+new Creature("theri", 16200, 657, null, "F", 2),
+new Creature("theri", 11200, 530, null, "M", 3),
+new Creature("theri", 11200, 530, null, "F", 4),
+new Creature("theri", 11200, 572, null, "M", 5),
+new Creature("theri", 11200, 572, null, "F", 3),
+new Creature("theri", 11270, 530, null, "F", 2),
+new Creature("theri", 13500, 549, null, "M", 2),
+new Creature("theri", 13500, 549, null, "F", 2),
+new Creature("theri", 9300, 443, null, "M", 3),
+new Creature("theri", 9300, 443, null, "F", 4),
+new Creature("theri", 9300, 478, null, "M", 5),
+new Creature("theri", 9300, 478, null, "F", 3),
+new Creature("carbo", 10500, null, null, null, 3),
+new Creature("trike", 4700, null, null, null, 5),
+new Creature("stego", 8400, null, null, null, 4),
+new Creature("megalodonte", 8700, null, null, null, 2),
+new Creature("tape", 3700, null, null, null, 4),
+new Creature("thyla", 6200, null, null, null, 2),
+new Creature("thyla", 5800, null, null, null, 1),
+new Creature("thyla", 6200, null, null, null, 2),
+new Creature("basilo", 36200, null, null, null, 2),
+new Creature("bronto", 19800, null, 2700, null, 1),
+new Creature("bronto", 19800, null, 2600, null, 1),
+new Creature("bronto", 19000, null, 2600, null, 1),
+new Creature("bronto", 11600, null, 2600, null, 2),
+new Creature("bronto", 19800, null, 2700, null, 1),
+];
+
+// Stampa tutte le creature nell'HTML
+Creature.printTames(creatures);
+
+
+
+
+
+
+
+
+
+
+/* // Funzione per creare un oggetto che rappresenta una creatura
 const createCreatureObject = (name, hp, dmg, weight, sex, quantity) => {
     return { name, hp, dmg, weight, sex, quantity };
 };
@@ -67,3 +144,4 @@ const printTames = (creaturesArray) => {
 
 // Stampa tutte le creature nell'HTML
 printTames(creatures);
+ */
